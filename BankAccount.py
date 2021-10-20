@@ -8,7 +8,7 @@ class BankAccount:
 
   def deposit(self, amount):
       total = amount + self.balance
-      return (f'Amount deposited: ${amount} New Balance: ${total}')
+      print(f'Amount deposited: ${amount} New Balance: ${total}')
       
   def withdraw(self, amount):
       if amount > self.balance:
@@ -17,8 +17,9 @@ class BankAccount:
       total = self.balance - amount
       return (f'Amount withdrawn: ${amount} New Balance: ${total}')
 
-  def get_balance(balance):
-      return (f'Account Balance: {balance}')
+  def get_balance(self):
+      print(f'Account Balance: {self.balance}')
+      return self.balance
 
   def add_interest(balance):
       interest = balance * 0.00083
@@ -27,3 +28,9 @@ class BankAccount:
 
   def print_statement(self, name, number, balance):
       return(f'{name} Account No.:{number} Balance: {balance}')
+
+
+mitchell_account = BankAccount("Mitchell", 3141592, 0)
+mitchell_account.deposit(400000)
+mitchell_account.get_balance
+
