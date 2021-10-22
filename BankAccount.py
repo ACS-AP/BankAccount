@@ -15,22 +15,23 @@ class BankAccount:
           self.balance -= 10
           return ('Insufficient Funds.')
       total = self.balance - amount
-      return (f'Amount withdrawn: ${amount} New Balance: ${total}')
+      print (f'Amount withdrawn: ${amount} New Balance: ${total}')
 
   def get_balance(self):
-      print(f'Account Balance: {self.balance}')
-      return self.balance
+      print (f'Account Balance: ${self.balance}')
 
-  def add_interest(balance):
-      interest = balance * 0.00083
-      total = interest + balance
-      return(total)
+  def add_interest(self):
+      interest = self.balance * 0.00083
+      total = interest + self.balance
+      print(total)
 
-  def print_statement(self, name, number, balance):
-      return(f'{name} Account No.:{number} Balance: {balance}')
+  def print_statement(self):
+      print(f'{self.name} Account No.:{self.number} Balance: {self.balance}')
 
 
-mitchell_account = BankAccount("Mitchell", 3141592, 0)
-mitchell_account.deposit(400000)
-mitchell_account.get_balance
+mitchell_account = BankAccount("Mitchell", 2173542, 100)
+mitchell_account.print_statement()
+mitchell_account.add_interest()
+mitchell_account.withdraw(20)
+
 
