@@ -11,30 +11,28 @@ class BankAccount:
       print(f'Amount deposited: ${amount} New Balance: ${total}')
       
   def withdraw(self, amount):
-      if amount > self.balance:
-          self.balance -= 10
-          return ('Insufficient Funds.')
-      total = self.balance - amount
-      print (f'Amount withdrawn: ${amount} New Balance: ${total}')
-      
-  def checkorsave(self):
-      choice = input("Checkings or Savings: ")
-      if "avings" in choice:
-          total = (self.balance*.012) + self.balance
-          print(f'Amount in Savings: ${total}')
-      if "heckings" in choice:
-          print(f'Amount in Checking: ${self.balance}')
+      if amount >= self.balance :
+            print('Insufficient Funds.')
+            self.balance -= 10
+            print(f'{self.name} charged overdraft fee of $10 new balance: ${self.balance}')
+      else :
+            self.balance -= amount
+            print(f'{self.name} withdrew: ${amount} new balance: ${self.balance}')
 
   def get_balance(self):
       print (f'Account Balance: ${self.balance}')
 
   def add_interest(self):
-      interest = self.balance * 0.00083
-      total = interest + self.balance
-      print(total)
+      self.balance += self.balance * 0.00083
+      print(self.balance)
 
   def print_statement(self):
-      print(f'{self.name} Account No.:{self.number} Balance: {self.balance}')
+      print('\n----- Statement -----')
+      print(self.name)
+      print(f'Account No.: {self.name}')
+      print(f'Balance: ${self.balance}')
+      print('---------------------\n')
+
 
 mitchell_account = BankAccount("Mitchell", 2173542, 100)
 mitchell_account.print_statement()
